@@ -88,4 +88,4 @@ app.addRoute(route, function(req, res) {
 
 ## License
 
-  [MIT](LICENSE)
+The Active JS framework is open-source software licensed under the [MIT](LICENSE)
