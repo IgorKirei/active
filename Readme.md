@@ -1,3 +1,8 @@
+## Feautures
+- high performance
+- strict routing
+- simple use
+
 ## Installation
 
 ```bash
@@ -25,6 +30,24 @@ app.startServer({
 ```
 
 ## Routing
+
+For adding new routing rule, you must use "addRoute" method of application object:
+
+```js
+app.addRoute(options, callback);
+```
+
+##### Options
+Settings for special rule.
+
+```js
+{
+    "method": String, // GET by default, also can be POST, PUT, DELETE
+    "url": String, // pattern for request url
+    "match": Object, // patterns for special params in request url
+    "query": Object // query parameters, after question mark
+}
+```
 
 Examples of application routes.
 

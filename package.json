@@ -1,7 +1,7 @@
 {
     "name": "active",
     "description": "Cool, simple and fast web framework",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": "Igor Kirey <mdj07@yandex.com>",
     "license": "MIT",
     "repository": "IgorKirey/active",
