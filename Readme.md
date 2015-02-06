@@ -1,4 +1,4 @@
-## Feautures
+## Features
 - high performance
 - strict routing
 - simple use
@@ -105,7 +105,13 @@ app.addRoute(route, function(req, res) {
 Use custom capabilities of framework:
 ```js
 app.addRoute(route, function(req, res) {
-    res.html(http_code, content);
+    res.html(http_code, html); // show html
+});
+```
+
+```js
+app.addRoute(route, function(req, res) {
+    res.json(http_code, json); // show json
 });
 ```
 
