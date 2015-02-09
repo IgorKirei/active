@@ -2,7 +2,7 @@
     "name": "active",
     "description": "Cool, simple and fast web framework",
     "main": "./lib/engine",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "author": "Igor Kirey <mdj07@yandex.com>",
     "license": "MIT",
     "repository": "IgorKirey/active",

@@ -115,6 +115,18 @@ app.addRoute(route, function(req, res) {
 });
 ```
 
+## Layers
+
+You can add middleware layer for all queries, it can be your own solution or package of other developer. Middleware layer is a function with three arguments: "req", "res" and "next", first and second are standard NodeJS objects, third is callback. Middleware will be executed for every request to the application.
+
+You can use any number of layers, but remember about your rom ;)
+
+```js
+app.useLayer(function(req, res, next) {
+    next();
+});
+```
+
 ## License
 
 The Active JS framework is open-source software licensed under the [MIT](LICENSE)
