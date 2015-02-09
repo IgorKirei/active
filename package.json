@@ -1,7 +1,8 @@
 {
     "name": "active",
     "description": "Cool, simple and fast web framework",
-    "version": "0.1.3",
+    "main": "./lib/engine",
+    "version": "0.1.4",
     "author": "Igor Kirey <mdj07@yandex.com>",
     "license": "MIT",
     "repository": "IgorKirey/active",
@@ -20,9 +21,8 @@
         "node": ">= 0.10.0"
     },
     "files": [
+        "lib/",
         "LICENSE",
-        "Readme.md",
-        "index.js",
-        "lib/"
+        "Readme.md"
     ]
 }
