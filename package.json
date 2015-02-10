@@ -1,8 +1,8 @@
 {
     "name": "active",
-    "description": "Cool, simple and fast web framework",
+    "description": "Cool, simple and fast web framework for NodeJS",
     "main": "./lib/engine",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "author": "Igor Kirey <mdj07@yandex.com>",
     "license": "MIT",
     "repository": "IgorKirey/active",
