@@ -1,13 +1,9 @@
+![ActiveJS framework](http://s1.oboiki.net/files/images/active_logo.png)
 ## Features
-- high performance
-> our main target is high performance, minimum of hidden unnecessary functionality
-- strict routing
-> we like strict routing system, if method should use some certain parameters, it must get it
-- simple use
-> if newbie can use our framework without any problem, this is real cool
-- friendly use
-> we provide way for connect packages, modules from other developers
-
+- **high performance**, our main target is high performance, minimum of hidden unnecessary functionality
+- **strict routing**, we like strict routing system, if method should use some certain parameters, it must get it
+- **simple use**, if newbie can use our framework without any problem, this is real cool
+- **friendly use**, we provide way for connect packages, modules from other developers
 
 ## Installation
 
