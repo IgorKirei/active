@@ -11,25 +11,32 @@
 $ npm install active
 ```
 
-## Usage
+## Create application
 
 ```js
 var active = require('active');
 var app = active();
 
-app.addRoute({
-    'url': '/'
-}, function(req, res) {
-    res.statusCode = 200;
-    res.end(content);
-});
+app.addRoute(options, callback);
+app.addRoute(options, callback);
+app.addRoute(options, callback);
 
+app.startServer(parameters);
+```
+##### Server
+To start new server you can use default settings:
+```js
+app.startServer();
+```
+Or custom settings:
+```js
 app.startServer({
-    'port': 80,
-    'host': 'localhost',
-    'cluster': true
+    'port': Number, // default 80
+    'host': String, // default localhost
+    'cluster': Boolean, // default false
 });
 ```
+All properties isn't required.
 
 ## Routing
 
@@ -44,14 +51,14 @@ Settings for special rule.
 
 ```js
 {
-    "method": String, // GET by default, also can be POST, PUT, DELETE
-    "url": String, // pattern for request url
-    "match": Object, // patterns for special params in request url
-    "query": Object // query parameters, after question mark
+    'method': String, // GET by default, also can be POST, PUT, DELETE
+    'url': String, // pattern for request url
+    'match': Object, // patterns for special params in request url
+    'query': Object // query parameters, after question mark
 }
 ```
 
-Examples of application routes.
+Examples of application routes:
 
 ```js
 app.addRoute({
@@ -79,6 +86,12 @@ Helpful information about callbacks.
 You can use path parameters, which been set in route ("url" directive):
 
 ```js
+app.addRoute(options, function(req, res) {});
+```
+
+Examples of application callbacks:
+
+```js
 app.addRoute({
     'url': '/{category}/{item}',
     'match': {
@@ -89,6 +102,7 @@ app.addRoute({
     console.log(req.params); // {category: String, item: String}
 });
 ```
+
 
 ## Response
 
@@ -138,7 +152,7 @@ app.useLayer(function(req, res, next) {
 ```
 
 ## Contributing
-"Active" framework is a new project, there is lot of work to do and you can help. You can do a lot of stuff:
+"Active" framework is a new project, there is lot of work to do and you can help:
 - review [pull requests](https://github.com/IgorKirey/active/pulls)
 - find new [issue](https://github.com/IgorKirey/active/issues) or fix exist
 - add new feature or improve some old
