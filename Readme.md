@@ -11,7 +11,7 @@
 $ npm install active
 ```
 
-## Quick start
+## Usage
 
 ```js
 var active = require('active');
@@ -136,6 +136,13 @@ app.useLayer(function(req, res, next) {
     next();
 });
 ```
+
+## Contributing
+"Active" framework is a new project, there is lot of work to do and you can help. You can do a lot of stuff:
+- review [pull requests](https://github.com/IgorKirey/active/pulls)
+- find new [issue](https://github.com/IgorKirey/active/issues) or fix exist
+- add new feature or improve some old
+- update documentation
 
 ## License
 
