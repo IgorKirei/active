@@ -5,6 +5,8 @@
 - **simple use**, if newbie can use our framework without any problem, this is real cool
 - **friendly use**, we provide way for connect packages, modules from other developers
 
+Soon will be able a new site with detailed documentation, in process.
+
 ## Installation
 
 ```bash
@@ -140,13 +142,17 @@ app.addRoute(route, function(req, res) {
 ```
 
 ## Layers
+What you can do using layers:
+- implement some specific middleware for your application
+- connect different packages from other developers
 
-You can add middleware layer for all queries, it can be your own solution or package of other developer. Middleware layer is a function with three arguments: "req", "res" and "next", first and second are standard NodeJS objects, third is callback. Middleware will be executed for every request to the application.
+In current version, middleware layers are using for all queries, but in future will be able using for specific route rules. Middleware layer is a function with three arguments: "req", "res" and "next", first and second are standard NodeJS objects, third is callback. Middleware will be executed for every request to the application.
 
 You can use any number of layers, but remember about your rom ;)
 
 ```js
 app.useLayer(function(req, res, next) {
+    // do something with "req" and "res" objects and run callback
     next();
 });
 ```
