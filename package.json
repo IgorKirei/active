@@ -2,7 +2,7 @@
     "name": "active",
     "description": "Cool, simple and fast web framework for NodeJS",
     "main": "./lib/engine",
-    "version": "0.2.5",
+    "version": "0.2.6",
     "author": "Igor Kirey <mdj07@yandex.com>",
     "license": "MIT",
     "repository": "IgorKirey/active",
@@ -15,7 +15,8 @@
         "api"
     ],
     "dependencies": {
-        "async": "~0.9.0"
+        "async": "~0.9.0",
+        "node-uuid": "~1.4.2"
     },
     "engines": {
         "node": ">= 0.10.0"

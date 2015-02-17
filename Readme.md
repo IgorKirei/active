@@ -143,19 +143,37 @@ app.addRoute(route, function(req, res) {
 
 ## Layers
 What you can do using layers:
-- implement some specific middleware for your application
+- implement some specific middleware layer for your application
 - connect different packages from other developers
 
-In current version, middleware layers are using for all queries, but in future will be able using for specific route rules. Middleware layer is a function with three arguments: "req", "res" and "next", first and second are standard NodeJS objects, third is callback. Middleware will be executed for every request to the application.
+Middleware layer is a function with three arguments: "req", "res" and "next", first and second are standard NodeJS objects, third is callback. There are two types of layers.
 
-You can use any number of layers, but remember about your rom ;)
+##### Local
+Will be executed for request matched specific route rule:
+```js
+app.addRoute(options, function(req, res, next) {
+    // do something with "req" and "res" objects and run callback
+    next();
+}, callback);
+```
 
+##### Global
+Will be executed for each request:
 ```js
 app.useLayer(function(req, res, next) {
     // do something with "req" and "res" objects and run callback
     next();
 });
 ```
+If you want to use few layers, you must send array with functions, instead of function:
+```js
+// local layer
+app.addRoute(options, [Function, Function, Function], callback);
+
+// global layer
+app.useLayer([Function, Function, Function]);
+```
+You can use any number of layers, but remember about your rom ;)
 
 ## Contributing
 "Active" framework is a new project, there is lot of work to do and you can help:
