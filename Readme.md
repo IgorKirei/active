@@ -1,4 +1,9 @@
 ![ActiveJS framework](http://s1.oboiki.net/files/images/active_logo.png)
+
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+[![Build Status][travis-image]][travis-url]
+
 ## Features
 - **high performance**, our main target is high performance, minimum of hidden unnecessary functionality
 - **strict routing**, we like strict routing system, if method should use some certain parameters, it must get it
@@ -187,3 +192,10 @@ Guys, sometimes we implement some new functionality, like uploading files. It wo
 ## License
 
 The Active JS framework is open-source software licensed under the [MIT](LICENSE)
+
+[npm-image]: https://img.shields.io/npm/v/active.svg?style=flat
+[npm-url]: https://npmjs.org/package/active
+[downloads-image]: https://img.shields.io/npm/dm/active.svg?style=flat
+[downloads-url]: https://npmjs.org/package/active
+[travis-image]: https://img.shields.io/travis/IgorKirey/active.svg?style=flat
+[travis-url]: https://travis-ci.org/IgorKirey/active
