@@ -174,6 +174,8 @@ app.addRoute(options, [Function, Function, Function], callback);
 app.useLayer([Function, Function, Function]);
 ```
 You can use any number of layers, but remember about your rom ;)
+## Testing
+Guys, sometimes we implement some new functionality, like uploading files. It works without any packages from other developers, so we need help to test how it works. If you found some error, please open new issue on Github or send email to us. Thanks!
 
 ## Contributing
 "Active" framework is a new project, there is lot of work to do and you can help:
