@@ -45,6 +45,16 @@ app.startServer({
 ```
 All properties isn't required.
 
+## Settings
+Next method needs for changing application settings, method isn't required:
+```js
+app.tune({
+    'routing': String // default "nonstrict", also can be "strict"
+});
+```
+##### Parameters
+- **routing**, strict routing is mean, that if some of your application method needs special parameters (set by route rule), these parameters must be received, if they don't, client will receive error
+
 ## Routing
 
 For adding new routing rule, you must use "addRoute" method of application object:
