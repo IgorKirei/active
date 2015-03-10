@@ -38,9 +38,9 @@ app.startServer();
 Or custom settings:
 ```js
 app.startServer({
-    'port': Number, // optional, default 80
-    'host': String, // optional, default localhost
-    'cluster': Boolean, // optional, default false
+  'port': Number, // optional, default 80
+  'host': String, // optional, default localhost
+  'cluster': Boolean // optional, default false
 });
 ```
 Also you can use http(s) package:
@@ -61,7 +61,7 @@ Check detailed documentation of these modules.
 Next method needs for changing application settings, method isn't required:
 ```js
 app.tune({
-    'routing': String // default "nonstrict", also can be "strict"
+  'routing': String // default "nonstrict", also can be "strict"
 });
 ```
 ##### Parameters
@@ -80,10 +80,10 @@ Settings for special rule.
 
 ```js
 {
-    'method': String, // GET by default, also can be POST, PUT, DELETE
-    'url': String, // pattern for request url
-    'match': Object, // patterns for special params in request url
-    'query': Object // query parameters, after question mark
+  'method': String, // GET by default, also can be POST, PUT, DELETE
+  'url': String, // pattern for request url
+  'match': Object, // patterns for special params in request url
+  'query': Object // query parameters, after question mark
 }
 ```
 
@@ -91,18 +91,18 @@ Examples of application routes:
 
 ```js
 app.addRoute({
-    'url': '/{category}',
-    'match': {
-        'category': ['phones', 'stuff']
-    }
+  'url': '/{category}',
+  'match': {
+    'category': ['phones', 'stuff']
+  }
 }, callback);
 
 app.addRoute({
-    'url': '/{category}/{item}',
-    'match': {
-        'category': ['phones', 'stuff'],
-        'item': '([a-z0-9-]{2,63}\.[a-z]{4})'
-    }
+  'url': '/{category}/{item}',
+  'match': {
+    'category': ['phones', 'stuff'],
+    'item': '([a-z0-9-]{2,63}\.[a-z]{4})'
+  }
 }, callback);
 ```
 
@@ -122,16 +122,15 @@ Examples of application callbacks:
 
 ```js
 app.addRoute({
-    'url': '/{category}/{item}',
-    'match': {
-        'category': ['phones', 'stuff'],
-        'item': '([a-z0-9-]{2,63}\.[a-z]{4})'
-    }
+  'url': '/{category}/{item}',
+  'match': {
+    'category': ['phones', 'stuff'],
+    'item': '([a-z0-9-]{2,63}\.[a-z]{4})'
+  }
 }, function(req, res) {
-    console.log(req.params); // {category: String, item: String}
+  console.log(req.params); // {category: String, item: String}
 });
 ```
-
 
 ## Response
 
@@ -141,8 +140,8 @@ You can choose how to return result to the client. Below you can see both exampl
 Use standard capabilities of Node using "res" object:
 ```js
 app.addRoute(route, function(req, res) {
-    res.statusCode = 200;
-    res.end(content);
+  res.statusCode = 200;
+  res.end(content);
 });
 ```
 
@@ -150,13 +149,13 @@ app.addRoute(route, function(req, res) {
 Use custom capabilities of framework:
 ```js
 app.addRoute(route, function(req, res) {
-    res.html(http_code, html); // show html
+  res.html(http_code, html); // show html
 });
 ```
 
 ```js
 app.addRoute(route, function(req, res) {
-    res.json(http_code, json); // show json
+  res.json(http_code, json); // show json
 });
 ```
 
@@ -164,7 +163,7 @@ app.addRoute(route, function(req, res) {
 Framework provides custom way for redirecting queries:
 ```js
 app.addRoute(route, function(req, res) {
-    res.redirect('/path/', 301);
+  res.redirect('/path/', 301);
 });
 ```
 
@@ -179,8 +178,8 @@ Middleware layer is a function with three arguments: "req", "res" and "next", fi
 Will be executed for request matched specific route rule:
 ```js
 app.addRoute(options, function(req, res, next) {
-    // do something with "req" and "res" objects and run callback
-    next();
+  // do something with "req" and "res" objects and run callback
+  next();
 }, callback);
 ```
 
@@ -188,8 +187,8 @@ app.addRoute(options, function(req, res, next) {
 Will be executed for each request:
 ```js
 app.useLayer(function(req, res, next) {
-    // do something with "req" and "res" objects and run callback
-    next();
+  // do something with "req" and "res" objects and run callback
+  next();
 });
 ```
 If you want to use few layers, you must send array with functions, instead of function:
