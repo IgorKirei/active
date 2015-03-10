@@ -38,12 +38,24 @@ app.startServer();
 Or custom settings:
 ```js
 app.startServer({
-    'port': Number, // default 80
-    'host': String, // default localhost
-    'cluster': Boolean, // default false
+    'port': Number, // optional, default 80
+    'host': String, // optional, default localhost
+    'cluster': Boolean, // optional, default false
 });
 ```
-All properties isn't required.
+Also you can use http(s) package:
+```js
+var app = active();
+var http = require('http');
+var https = require('https');
+
+// simple http server
+http.createServer(app).listen(port);
+
+// secure server with SSL
+https.createServer(options, app).listen(port);
+```
+Check detailed documentation of these modules.
 
 ## Settings
 Next method needs for changing application settings, method isn't required:
