@@ -2,8 +2,11 @@
   "name": "active",
   "description": "Cool, simple and fast web framework for NodeJS",
   "main": "./lib/application",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "author": "Igor Kirey <mdj07@yandex.com>",
+  "contributors": [
+    "Igor Kirey <mdj07@yandex.com>"
+  ],
   "license": "MIT",
   "repository": "IgorKirey/active",
   "homepage": "",
