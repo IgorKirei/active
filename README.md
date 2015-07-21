@@ -202,6 +202,20 @@ app.addRoute(options, [Function, Function, Function], callback);
 app.useLayer([Function, Function, Function]);
 ```
 You can use any number of layers, but remember about your rom ;)
+## Tips
+Below you can find some advices.
+##### Page not found
+If some client request doesn't match your routing rules, our framework will shows blank page with 404 status. Of course for production we need more intelligent solution, so here is example how you can show your custom "not found" page:
+```js
+app.addRoute({
+  'url': '/{url}',
+  'match': {
+    'url': '(.*)'
+  }
+}, callback);
+```
+You see? Just need add new routing rule for processing all requests. This rule must be last one, it's very important.
+
 ## Testing
 Guys, sometimes we implement some new functionality, like uploading files. It works without any packages from other developers, so we need help to test how it works. If you found some error, please open new issue on Github or send email to us. Thanks!
 
