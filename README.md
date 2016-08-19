@@ -1,4 +1,4 @@
-![ActiveJS framework](http://s1.oboiki.net/files/images/active_logo.png)
+[![ActiveJS framework](http://s1.oboiki.net/files/images/active_logo.png)](http://activejs.info/)
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
@@ -10,12 +10,13 @@
 - **simple use**, if newbie can use our framework without any problem, this is real cool
 - **friendly use**, we provide way for connect packages, modules from other developers
 
-Soon will be able a new site with detailed documentation, in process.
+## Docs
+- [Website and Documentation](http://activejs.info/)
 
 ## Installation
 
 ```bash
-$ npm install active
+$ npm install active --save
 ```
 
 ## Create application
