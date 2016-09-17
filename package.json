@@ -2,7 +2,7 @@
   "name": "active",
   "description": "Cool, simple and fast web framework for NodeJS",
   "main": "./lib/application",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "author": "Igor Kirey <mdj07@yandex.com>",
   "contributors": [
     "Igor Kirey <mdj07@yandex.com>"
@@ -17,15 +17,15 @@
     "rest",
     "api"
   ],
-  "dependencies": {
-    "node-uuid": "~1.4.2"
-  },
   "engines": {
     "node": ">= 4.0.0"
   },
   "files": [
     "lib/",
     "LICENSE",
-    "Readme.md"
-  ]
+    "README.md"
+  ],
+  "dependencies": {
+    "chalk": "^1.1.3"
+  }
 }

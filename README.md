@@ -64,11 +64,13 @@ Next method needs for changing application settings, method isn't required:
 app.tune({
   'routing': String // default "nonstrict", also can be "strict"
   'cors': Boolean // default false
+  'debug': Boolean // default false
 });
 ```
 ##### Parameters
 - **routing**, strict routing is mean, that if some of your application method needs special parameters (set by route rule), these parameters must be received, if they don't, client will receive error
 - **cors**, cross-origin resource sharing, read details [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
+- **debug**, application with enabled debug mode prints speed for each request
 
 ## Routing
 
