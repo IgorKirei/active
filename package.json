@@ -2,23 +2,25 @@
   "name": "active",
   "description": "Cool, simple and fast web framework for NodeJS",
   "main": "./lib/application",
-  "version": "0.5.6",
+  "version": "1.0.0",
   "author": "Igor Kirey <mdj07@yandex.com>",
   "contributors": [
     "Igor Kirey <mdj07@yandex.com>"
   ],
   "license": "MIT",
-  "repository": "IgorKirey/active",
+  "repository": "IgorKirei/active",
   "homepage": "http://activejs.info/",
   "keywords": [
     "active",
     "web",
     "framework",
     "rest",
-    "api"
+    "api",
+    "app",
+    "router"
   ],
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">= 8.0.0"
   },
   "files": [
     "lib/",
@@ -26,7 +28,7 @@
     "README.md"
   ],
   "dependencies": {
-    "chalk": "^1.1.3",
-    "uuid": "^3.0.1"
+    "chalk": "^2.4.2",
+    "uuid": "^3.3.2"
   }
 }

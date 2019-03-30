@@ -2,7 +2,7 @@
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
-[![Build Status][travis-image]][travis-url]
+[![Linux Build][travis-image]][travis-url]
 
 ## Features
 - **high performance**, our main target is high performance, minimum of hidden unnecessary functionality
@@ -12,6 +12,7 @@
 
 ## Docs
 - [Website and Documentation](http://activejs.info/)
+Advice, criticism, help are much appreciated.
 
 ## Installation
 
@@ -19,52 +20,24 @@
 $ npm install active --save
 ```
 
-## Create application
+## Create and Start application
 
 ```js
-var active = require('active');
-var app = active();
+const active = require("active");
+const app = active();
 
 app.addRoute(options, callback);
-app.addRoute(options, callback);
-app.addRoute(options, callback);
 
-app.startServer(parameters);
+http.createServer(app).listen();
 ```
-##### Server
-To start new server you can use default settings:
-```js
-app.startServer();
-```
-Or custom settings:
-```js
-app.startServer({
-  'port': Number, // optional, default 80
-  'host': String, // optional, default localhost
-  'cluster': Boolean // optional, default false
-});
-```
-Also you can use http(s) package:
-```js
-var app = active();
-var http = require('http');
-var https = require('https');
-
-// simple http server
-http.createServer(app).listen(port);
-
-// secure server with SSL
-https.createServer(options, app).listen(port);
-```
-Check detailed documentation of these modules.
 
 ## Settings
 Next method needs for changing application settings, method isn't required:
 ```js
 app.tune({
-  'routing': String // default "nonstrict", also can be "strict"
-  'cors': Boolean // default false
-  'debug': Boolean // default false
+  "routing": String // default "nonstrict", also can be "strict"
+  "cors": Boolean // default false
+  "debug": Boolean // default false
 });
 ```
 ##### Parameters
@@ -74,21 +47,20 @@ app.tune({
 
 ## Routing
 
-For adding new routing rule, you must use "addRoute" method of application object:
+For adding new routing rule, you should use "addRoute" method:
 
 ```js
 app.addRoute(options, callback);
 ```
 
-##### Options
-Settings for special rule.
+Available options:
 
 ```js
 {
-  'method': String, // GET by default, also can be POST, PUT, DELETE
-  'url': String, // pattern for request url
-  'match': Object, // patterns for special params in request url
-  'query': Object // query parameters, after question mark
+  "method": String, // GET by default, also can be POST, PUT, DELETE
+  "url": String, // pattern for request url
+  "match": Object, // patterns for special params in request url
+  "query": Object // query parameters, after question mark
 }
 ```
 
@@ -96,19 +68,19 @@ Examples of application routes:
 
 ```js
 app.addRoute({
-  'url': '/{category}',
-  'match': {
-    'category': ['phones', 'stuff']
+  "url": "/{category}",
+  "match": {
+    "category": ["phones", "stuff"]
   }
-}, callback);
+}, (req, res) => {});
 
 app.addRoute({
-  'url': '/{category}/{item}',
-  'match': {
-    'category': ['phones', 'stuff'],
-    'item': '([a-z0-9-]{2,63}\.[a-z]{4})'
+  "url": "/{category}/{item}",
+  "match": {
+    "category": ["phones", "stuff"],
+    "item": "([a-z0-9-]{2,63}\.[a-z]{4})"
   }
-}, callback);
+}, (req, res) => {});
 ```
 
 ## Callbacks
@@ -117,34 +89,28 @@ Helpful information about callbacks.
 
 ##### Request parameters
 
-You can use path parameters, which been set in route ("url" directive):
-
-```js
-app.addRoute(options, function(req, res) {});
-```
-
 Examples of application callbacks:
 
 ```js
 app.addRoute({
-  'url': '/{category}/{item}',
-  'match': {
-    'category': ['phones', 'stuff'],
-    'item': '([a-z0-9-]{2,63}\.[a-z]{4})'
+  "url": "/{category}/{item}",
+  "match": {
+    "category": ["phones", "stuff"],
+    "item": "([a-z0-9-]{2,63}\.[a-z]{4})"
   }
-}, function(req, res) {
+}, (req, res) => {
   console.log(req.params); // {category: String, item: String}
 });
 ```
 
 ## Response
 
-You can choose how to return result to the client. Below you can see both examples.
+You can choose how to return result to the client. Below you can find both examples.
 
 ##### Standart
 Use standard capabilities of Node using "res" object:
 ```js
-app.addRoute(route, function(req, res) {
+app.addRoute(route, (req, res) => {
   res.statusCode = 200;
   res.end(content);
 });
@@ -153,22 +119,22 @@ app.addRoute(route, function(req, res) {
 ##### Custom
 Use custom capabilities of framework:
 ```js
-app.addRoute(route, function(req, res) {
+app.addRoute(route, (req, res) => {
   res.html(http_code, html); // show html
 });
 ```
 
 ```js
-app.addRoute(route, function(req, res) {
+app.addRoute(route, (req, res) => {
   res.json(http_code, json); // show json
 });
 ```
 
 ##### Redirect
-Framework provides custom way for redirecting queries:
+Framework provides easy way for redirecting queries:
 ```js
-app.addRoute(route, function(req, res) {
-  res.redirect('/path/', 301);
+app.addRoute(options, (req, res) => {
+  res.redirect("/path/", 301);
 });
 ```
 
@@ -182,7 +148,7 @@ Middleware layer is a function with three arguments: "req", "res" and "next", fi
 ##### Local
 Will be executed for request matched specific route rule:
 ```js
-app.addRoute(options, function(req, res, next) {
+app.addRoute(options, (req, res, next) => {
   // do something with "req" and "res" objects and run callback
   next();
 }, callback);
@@ -191,41 +157,42 @@ app.addRoute(options, function(req, res, next) {
 ##### Global
 Will be executed for each request:
 ```js
-app.useLayer(function(req, res, next) {
+app.useLayer((req, res, next) => {
   // do something with "req" and "res" objects and run callback
   next();
 });
 ```
-If you want to use few layers, you must send array with functions, instead of function:
+If you want to use few layers, you must send array with functions, instead of one function, e.g.:
 ```js
-// local layer
+// for local layer
 app.addRoute(options, [Function, Function, Function], callback);
 
-// global layer
+// for global layer
 app.useLayer([Function, Function, Function]);
 ```
-You can use any number of layers, but remember about your rom ;)
+
 ## Tips
 Below you can find some advices.
+
 ##### Page not found
-If some client request doesn't match your routing rules, our framework will shows blank page with 404 status. Of course for production we need more intelligent solution, so here is example how you can show your custom "not found" page:
+If some client request doesn't match your routing rules, our framework will shows blank page with 404 http status. Of course for production we need more intelligent solution, so here is example how you can show your custom "not found" page:
 ```js
 app.addRoute({
-  'url': '/{url}',
-  'match': {
-    'url': '(.*)'
+  "url": "/{url}",
+  "match": {
+    "url": "(.*)"
   }
 }, callback);
 ```
-You see? Just need add new routing rule for processing all requests. This rule must be last one, it's very important.
+You see? Just need add new routing rule for processing all requests. This rule must be last one - just in case to overwrite previous, it's very important.
 
 ## Testing
 Guys, sometimes we implement some new functionality, like uploading files. It works without any packages from other developers, so we need help to test how it works. If you found some error, please open new issue on Github or send email to us. Thanks!
 
 ## Contributing
-"Active" framework is a new project, there is lot of work to do and you can help:
-- review [pull requests](https://github.com/IgorKirey/active/pulls)
-- find new [issue](https://github.com/IgorKirey/active/issues) or fix exist
+You can help to improve "Active" framework, there is lot of work to do:
+- review [pull requests](https://github.com/IgorKirei/active/pulls)
+- find new [issue](https://github.com/IgorKirei/active/issues) or fix existing
 - add new feature or improve some old
 - update documentation
 
@@ -237,5 +204,5 @@ The Active JS framework is open-source software licensed under the [MIT](LICENSE
 [npm-url]: https://npmjs.org/package/active
 [downloads-image]: https://img.shields.io/npm/dm/active.svg?style=flat
 [downloads-url]: https://npmjs.org/package/active
-[travis-image]: https://img.shields.io/travis/IgorKirey/active.svg?style=flat
-[travis-url]: https://travis-ci.org/IgorKirey/active
+[travis-image]: https://img.shields.io/travis/IgorKirei/active.svg?style=flat
+[travis-url]: https://travis-ci.org/IgorKirei/active
