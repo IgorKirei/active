@@ -5,14 +5,11 @@
 [![Linux Build][travis-image]][travis-url]
 
 ## Features
-- **high performance**, our main target is high performance, minimum of hidden unnecessary functionality
-- **strict routing**, we like strict routing system, if method should use some certain parameters, it must get it
-- **simple use**, if newbie can use our framework without any problem, this is real cool
-- **friendly use**, we provide way for connect packages, modules from other developers
+- **high performance**, our main target is high performance, minimum of hidden unnecessary functionality, why? because you know better what you need and nobody knows what stack is the best in your unique case
+- **extendable**, we provide a way to extend your future app with middlewares, so you can use modules from other developers
 
 ## Docs
 - [Website and Documentation](http://activejs.info/)
-Advice, criticism, help are much appreciated.
 
 ## Installation
 
@@ -46,7 +43,6 @@ app.tune({
 - **debug**, application with enabled debug mode prints speed for each request
 
 ## Routing
-
 For adding new routing rule, you should use "addRoute" method:
 
 ```js
@@ -107,7 +103,7 @@ app.addRoute({
 
 You can choose how to return result to the client. Below you can find both examples.
 
-##### Standart
+##### Standard
 Use standard capabilities of Node using "res" object:
 ```js
 app.addRoute(route, (req, res) => {
@@ -139,13 +135,11 @@ app.addRoute(options, (req, res) => {
 ```
 
 ## Layers
-What you can do using layers:
-- implement some specific middleware layer for your application
-- connect different packages from other developers
+Another name for this feature is Middleware. Basically this is a simple way to do something with **req** and **res** objects, e.g. add authorization logic before API callback runs.
 
-Middleware layer is a function with three arguments: "req", "res" and "next", first and second are standard NodeJS objects, third is callback. There are two types of layers.
+You can define layers using two ways:
 
-##### Local
+##### Specific
 Will be executed for request matched specific route rule:
 ```js
 app.addRoute(options, (req, res, next) => {
@@ -195,6 +189,8 @@ You can help to improve "Active" framework, there is lot of work to do:
 - find new [issue](https://github.com/IgorKirei/active/issues) or fix existing
 - add new feature or improve some old
 - update documentation
+Advice, criticism, help are much appreciated :)
+
 
 ## License
 
