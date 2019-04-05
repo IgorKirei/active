@@ -2,7 +2,7 @@
   "name": "active",
   "description": "Cool, simple and fast web framework for NodeJS",
   "main": "./lib/application",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Igor Kirei <mdj07@yandex.com>",
   "contributors": [
     "Igor Kirei <mdj07@yandex.com>"
@@ -22,9 +22,6 @@
   "engines": {
     "node": ">= 8.0.0"
   },
-  "scripts": {
-    "format": "prettier --write \"lib/**/*.js\""
-  },
   "files": [
     "lib/",
     "LICENSE",
@@ -32,7 +29,6 @@
   ],
   "dependencies": {
     "chalk": "^2.4.2",
-    "prettier": "^1.16.4",
     "uuid": "^3.3.2"
   }
 }
