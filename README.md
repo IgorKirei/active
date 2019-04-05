@@ -3,6 +3,7 @@
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Linux Build][travis-image]][travis-url]
+[![Coverage Status](https://coveralls.io/repos/github/IgorKirei/active/badge.svg?branch=master)](https://coveralls.io/github/IgorKirei/active?branch=master)
 
 ## Docs
 - [Website and Documentation](http://activejs.info/)
@@ -171,6 +172,12 @@ app.addRoute({
 });
 ```
 Just need add new routing rule for processing all requests. Important thing: this rule must be last one - just in case to overwrite previous, it's very important.
+
+## Tests
+After installing of all dependencies you can run tests:
+```js
+npm test
+```
 
 ## Contributing
 You can help to improve "Active" framework, there is lot of work to do:

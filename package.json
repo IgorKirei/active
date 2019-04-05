@@ -2,7 +2,7 @@
   "name": "active",
   "description": "Cool, simple and fast web framework for NodeJS",
   "main": "./lib/application",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Igor Kirei <mdj07@yandex.com>",
   "contributors": [
     "Igor Kirei <mdj07@yandex.com>"
@@ -30,5 +30,13 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0"
+  },
+  "scripts": {
+    "test": "mocha --check-leaks './tests/*.js'",
+    "test-cov": "nyc mocha --check-leaks './tests/*.js'"
   }
 }
