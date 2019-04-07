@@ -1,12 +1,13 @@
-[![ActiveJS framework](http://s1.oboiki.net/files/images/active_logo.png)](http://activejs.info/)
-
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Linux Build][travis-image]][travis-url]
 [![Coverage Status](https://coveralls.io/repos/github/IgorKirei/active/badge.svg?branch=master)](https://coveralls.io/github/IgorKirei/active?branch=master)
 
+# ActiveJS
+High performance, extendable solution with less unnecessary features. Achieve the maximum possible speed of NodeJS framework!
+
 ## Docs
-- [Website and Documentation](http://activejs.info/)
+- [Website and Documentation](http://activejs.pro/)
 
 ## Installation
 

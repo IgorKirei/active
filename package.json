@@ -2,14 +2,14 @@
   "name": "active",
   "description": "Cool, simple and fast web framework for NodeJS",
   "main": "./lib/application",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Igor Kirei <mdj07@yandex.com>",
   "contributors": [
     "Igor Kirei <mdj07@yandex.com>"
   ],
   "license": "MIT",
   "repository": "IgorKirei/active",
-  "homepage": "http://activejs.info/",
+  "homepage": "http://activejs.pro/",
   "keywords": [
     "active",
     "web",
