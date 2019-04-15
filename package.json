@@ -2,7 +2,7 @@
   "name": "active",
   "description": "Cool, simple and fast web framework for NodeJS",
   "main": "./lib/application",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Igor Kirei <mdj07@yandex.com>",
   "contributors": [
     "Igor Kirei <mdj07@yandex.com>"
