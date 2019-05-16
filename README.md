@@ -47,7 +47,8 @@ app.addRoute({
     method: String, // default GET
     url: String,
     match: Object,
-    query: Object
+    query: Object,
+    fileParsing: Boolean // default true
 }, (req, res) => {});
 ```
 
@@ -56,6 +57,7 @@ app.addRoute({
 - **url** - pattern for request url (required)
 - **match** - patterns for special parameters in request url (optional)
 - **query** - patterns for query string parameters, after question mark (optional)
+- **fileParsing** - framework parses (if true) or doesn't parse (if false) request's body for uploaded files (optional)
 
 ##### Callback
 This is how you can handle client's requests.

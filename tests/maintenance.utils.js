@@ -54,6 +54,16 @@ describe("utils", () => {
     });
   });
 
+  describe("validate.bool()", () => {
+    it("success", () => {
+      assert.equal(utils.validate.bool(true), true);
+    });
+
+    it("fail", () => {
+      assert.equal(utils.validate.bool(""), false);
+    });
+  });
+
   describe("merge()", () => {
     it("success", () => {
       const one = {
