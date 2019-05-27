@@ -28,14 +28,12 @@ http.createServer(app).listen();
 Using next method you can change application settings. All settings are optional.
 ```js
 app.tune({
-    strictRouting: Boolean, // default false
     cors: Boolean, // default false
     debug: Boolean // default false
 });
 ```
 
 ##### Parameters
-- **strictRouting** - strict routing is mean, that if some of your application method needs special parameters (set by route rule), these parameters must be received, if they don't, client will receive error
 - **cors** - cross-origin resource sharing, read details [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 - **debug** - application with enabled debug mode prints speed for each request
 
@@ -57,7 +55,7 @@ app.addRoute({
 - **url** - pattern for request url (required)
 - **match** - patterns for special parameters in request url (optional)
 - **query** - patterns for query string parameters, after question mark (optional)
-- **fileParsing** - framework parses (if true) or doesn't parse (if false) request's body for uploaded files (optional)
+- **fileParsing** - framework parses (if true) or doesn't parse (if false) request's body for uploaded files if Content-Type is *multipart/form-data* (optional)
 
 ##### Callback
 This is how you can handle client's requests.
