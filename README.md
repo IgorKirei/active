@@ -126,6 +126,7 @@ While processing client's request you can get access to internal variables in **
 - **req.params** - URL parameters
 - **req.query** - query string parameters
 - **req.files** - name, extension, mime and content of uploaded file
+- **req.route** - current route rule
 
 ## Middleware
 Basically this is a simple way to do something with **req** and **res** objects while processing client's requests, e.g. add authorization logic before API callback runs. In ActiveJS we know this feature as **layers**.
